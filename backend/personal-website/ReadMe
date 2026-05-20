@@ -1,0 +1,14 @@
+1- python -m venv .env
+2- source .env/bin/activate
+3- pip install django djangorestframework markdown django-filter django-cors-headers
+4- pip freeze > requirements.txt
+5- mkdir apps
+6- cd apps
+7- django-admin startproject src .
+8- django-admin startapp form_builder
+9- python manage.py makemigrations
+10- python manage.py migrate
+11- mysql -u root -p azerty
+12- create database form_builder;
+
+
