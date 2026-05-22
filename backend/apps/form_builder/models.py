@@ -40,7 +40,7 @@ class Field(models.Model):
         return self.label
 
 class FieldChoice(models.Model):
-    field = models.ForeignKey(Field, on_delete=models.CASCADE)
+    field = models.ForeignKey(Field, on_delete=models.CASCADE, related_name='choices')
     choice_text = models.CharField(max_length=255)
     choice_value = models.CharField(max_length=255)
     created_at = models.DateTimeField(auto_now_add=True)
