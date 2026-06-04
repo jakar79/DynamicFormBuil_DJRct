@@ -1,0 +1,108 @@
+@id faqcnc
+@name Get Request id=(11)
+GET http://localhost:8000/api/forms/11
+Content-Type: application/json
+
+###
+@id ppyypt
+@name Get Request id=(5)
+GET http://localhost:8000/api/forms/5/
+Content-Type: application/json
+
+###
+@id 4ddux5
+@name Post Request
+POST  http://localhost:8000/api/forms/
+Content-Type: application/json
+
+{
+  "name": "Questionnaire FormData",
+  "sections": [
+    {
+        "name": "Personal Information3",
+        "form_fields": [
+            {
+                "label": "First Name",
+                "field_type": "text",
+                "choices": []
+            }
+        ]
+    }
+  ]
+}
+###
+@id h1lnlt
+@name Post Request
+POST  http://localhost:8000/api/forms/
+Content-Type: application/json
+
+{
+  "name": "Questionnaire Perso",
+  "sections": [
+    {
+        "name": "Personal Information",
+        "form_fields": [
+            {
+                "label": "First Name",
+                "field_type": "text",
+                "choices": []
+            },
+            {
+                "label": "Last Name",
+                "field_type": "text",
+                "choices": []
+            },
+            {
+                "label": "Gender",
+                "field_type": "select",
+                "choices": [
+                    {
+                        "choice_text": "Male"
+                    },
+                    {
+                        "choice_text": "Female"
+                    }
+                ]
+            }
+        ]
+    }
+  ]
+}
+###
+@id 37g0cc
+@name Put Request
+PUT  http://localhost:8000/api/forms/11/
+Content-Type: application/json
+
+{
+  "name": "Questionnaire Perso",
+  "sections": [
+    {
+        "name": "Personal Information",
+        "form_fields": [
+            {
+                "label": "First Name",
+                "field_type": "text",
+                "choices": []
+            },
+            {
+                "label": "Last Name",
+                "field_type": "text",
+                "choices": []
+            },
+            {
+                "label": "Gender",
+                "field_type": "radio",
+                "choices": [
+                    {
+                        "choice_text": "Male"
+                    },
+                    {
+                        "choice_text": "Female"
+                    }
+                ]
+            }
+        ]
+    }
+  ]
+}
