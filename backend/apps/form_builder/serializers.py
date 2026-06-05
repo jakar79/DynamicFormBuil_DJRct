@@ -1,3 +1,7 @@
+# serializers.py
+# author: Jakar
+# date: 2026-06-01
+# description: serializers for the form builder app
 from rest_framework import serializers
 from .models import Form, Section, Field, FieldChoice
 
