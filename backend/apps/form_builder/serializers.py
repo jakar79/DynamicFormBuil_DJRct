@@ -142,7 +142,7 @@ class FormSerializer(serializers.ModelSerializer):
             for field in existing_fields:
                 field.delete()
         # :delete remaining sections
-        for section in existing_section:
+        for section in existing_sections:
             section.delete()
 
 

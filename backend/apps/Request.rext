@@ -10,6 +10,11 @@ GET http://localhost:8000/api/forms/5/
 Content-Type: application/json
 
 ###
+@id ur5y56
+@name Get Request id=(5)
+DELETE http://localhost:8000/api/forms/5
+Content-Type: application/json
+###
 @id 4ddux5
 @name Post Request
 POST  http://localhost:8000/api/forms/
@@ -78,7 +83,7 @@ Content-Type: application/json
   "name": "Questionnaire Perso",
   "sections": [
     {
-        "name": "Personal Information",
+        "name": "Personal Informations",
         "form_fields": [
             {
                 "label": "First Name",
