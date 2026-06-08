@@ -42,10 +42,10 @@ POST  http://localhost:8000/api/forms/
 Content-Type: application/json
 
 {
-  "name": "Questionnaire Perso",
+  "name": "Check Questionnaire",
   "sections": [
     {
-        "name": "Personal Information",
+        "name": "Personal check Information",
         "form_fields": [
             {
                 "label": "First Name",
@@ -59,7 +59,7 @@ Content-Type: application/json
             },
             {
                 "label": "Gender",
-                "field_type": "select",
+                "field_type": "checkbox",
                 "choices": [
                     {
                         "choice_text": "Male"
