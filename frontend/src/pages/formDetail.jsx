@@ -67,17 +67,6 @@ const FormDetail = () => {
                                                 </div>
                                             );
                                         case 'radio':
-                                            return (
-                                                <div key={field.id}>
-                                                    <label className="form-label">{field.label}</label>
-                                                    {choices.map((choice) => (
-                                                        <div key={choice.id}>
-                                                            <input type="radio" name={name} value={choice.choice_text} />
-                                                            <label>{choice.choice_text}</label>
-                                                        </div>
-                                                    ))}
-                                                </div>
-                                            );
                                         case 'checkbox':
                                             return (
                                                 <div key={field.id}>

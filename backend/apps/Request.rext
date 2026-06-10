@@ -80,7 +80,7 @@ PUT  http://localhost:8000/api/forms/11/
 Content-Type: application/json
 
 {
-  "name": "Questionnaire Perso",
+  "name": "info Questionnaire",
   "sections": [
     {
         "name": "Personal Informations",
@@ -104,6 +104,18 @@ Content-Type: application/json
                     },
                     {
                         "choice_text": "Female"
+                    }
+                ]
+            },
+            {
+                "label": "Poid",
+                "field_type": "checkbox",
+                "choices": [
+                    {
+                        "choice_text": ">70"
+                    },
+                    {
+                        "choice_text": "<70"
                     }
                 ]
             }

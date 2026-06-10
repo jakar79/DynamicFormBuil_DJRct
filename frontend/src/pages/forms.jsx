@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
- 
+
 const Forms = () => {
     const [forms, setForms] = useState([]);
 
@@ -14,10 +14,20 @@ const Forms = () => {
                 console.log(error);
             });
     }, []);
-    
+
     return (
         <div className='container'>
-            <h1>Forms</h1>
+            <div className='d-flex my-5'>
+                <div className='me-auto'>
+                    <h1>Forms</h1>
+                </div>
+                <div className=''>
+                    <Link to={"/form/create"} className='btn btn-outline-primary'>
+                    Create Form
+                    </Link>
+                </div>
+            </div>
+
             <table className='table table-striped'>
                 <thead>
                     <tr>
