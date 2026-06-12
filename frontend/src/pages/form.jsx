@@ -8,6 +8,7 @@ const Form = () => {
     const { formId } = useParams();
     const navigate = useNavigate();
 
+
     useEffect(() => {
         const getFormData = async () => {
             const response = await axios.get("/api/forms/" + formId);
@@ -42,12 +43,12 @@ const Form = () => {
         setSections(updatedSections);
     };
     const handleAddField = (sectionIndex) => {
-        const updatedSections = [...sections];
         const newField = {
             label: "",
             field_type: "text",
             choices: [],
         };
+        const updatedSections = [...sections];
         updatedSections[sectionIndex].form_fields.push(newField);
         setSections(updatedSections);
     };
@@ -58,7 +59,7 @@ const Form = () => {
     };
     const handleAddOption = (sectionIndex, fieldIndex) => {
         const updatedSections = [...sections];
-        updatedSections[sectionIndex].form_fields[fieldIndex].choices.push("");
+        updatedSections[sectionIndex].form_fields[fieldIndex].choices.push({});
         setSections(updatedSections);
     };
     const handleOptionChange = (e, sectionIndex, fieldIndex, optionIndex) => {
@@ -97,11 +98,13 @@ const Form = () => {
     };
     console.log(sections);
 
+
+
     return (
-        <div className='container my-5'>
-            <div className='d-flex'>
+        <div className='container'>
+            <div className='d-flex my-3'>
                 <div className='me-auto'>
-                    <h1>{formId ? "Edit form" : "Create Form"}</h1>
+                    <h3>{formId ? "Edit form" : "Create Form"}</h3>
                 </div>
                 <div className=''>
                     <Link to={"/"} className='btn btn-outline-primary'>
@@ -153,7 +156,7 @@ const Form = () => {
                                         name={`sectionName${sectionIndex}`}
                                         id={`sectionName${sectionIndex}`}
                                         placeholder='Enter section name'
-                                        value={section.name ? section.name : `Section ${sectionIndex + 1}`}
+                                        value={section.name?section.name : `Section ${sectionIndex + 1}`}
                                         className='form-control'
                                         onChange={(e) => handleSectionNameChange(e, sectionIndex)}
                                     />
@@ -218,7 +221,7 @@ const Form = () => {
                                                                         name='option'
                                                                         className="form-control"
                                                                         value={option.choice_text}
-                                                                        onChange={(e) => handleOptionChange(sectionIndex, fieldIndex, optionIndex, e.target.value)}
+                                                                        onChange={(e) => handleOptionChange(e, sectionIndex, fieldIndex, optionIndex)}
                                                                     />
                                                                 </div>
                                                                 <div className="col-3">
@@ -236,7 +239,7 @@ const Form = () => {
                                                 </ul>
                                             )}
                                         </div>
-                                        <div className="col-12">
+                                        <div className="col-6">
                                             {["radio", "checkbox", "select"].includes(field.field_type) && (
                                                 <button
                                                     className='btn btn-outline-success'
@@ -251,7 +254,7 @@ const Form = () => {
                                 </li>
                             ))}
                         </ul>
-                        <div className="d-flex">
+                        <div className="d-flex my-3">
                             <button
                                 className='btn btn-outline-primary w-100'
                                 type='button'
@@ -262,7 +265,7 @@ const Form = () => {
                         </div>
                     </div>
                 ))}
-                <div className="d-flex">
+                <div className="d-flex my-3">
                     <div className="me-auto p-2">
                         <button className='btn btn-primary' type='button' onClick={handleAddSection}>
                             Add Section
