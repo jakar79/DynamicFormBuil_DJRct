@@ -88,7 +88,7 @@ const Form = () => {
             });
         } else {
             // Create form
-            axios.post("/api/forms/", data).then((response) => {
+            axios.post(`/api/forms/`, data).then((response) => {
                 console.log("Form Created successfully", response);
                 setFormName("");
                 setSections([]);
@@ -211,7 +211,7 @@ const Form = () => {
                                         </div>
                                         <div className="col-6">
                                             {["radio", "checkbox", "select"].includes(field.field_type) && (
-                                                <ul>
+                                                <ul className='list-group my-2'>
                                                     {field.choices.map((option, optionIndex) => (
                                                         <li className="list-group-item" key={optionIndex}>
                                                             <div className="row">
@@ -239,7 +239,7 @@ const Form = () => {
                                                 </ul>
                                             )}
                                         </div>
-                                        <div className="col-6">
+                                        <div className="col-12">
                                             {["radio", "checkbox", "select"].includes(field.field_type) && (
                                                 <button
                                                     className='btn btn-outline-success'
@@ -267,7 +267,10 @@ const Form = () => {
                 ))}
                 <div className="d-flex my-3">
                     <div className="me-auto p-2">
-                        <button className='btn btn-primary' type='button' onClick={handleAddSection}>
+                        <button
+                            className='btn btn-primary'
+                            type='button'
+                            onClick={handleAddSection}>
                             Add Section
                         </button>
                     </div>
